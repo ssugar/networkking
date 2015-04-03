@@ -15,30 +15,54 @@ dpkg-reconfigure --frontend noninteractive tzdata
 apt-get update
 apt-get install curl -y
 apt-get install nano -y
+
 #set up node js on debian
 curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install nodejs -y
 apt-get install build-essential -y 
+
 #set up networkKing app
 mkdir networkKing
 cd networkKing
 npm init
+
 #install express
 npm install express --save
 npm install express-generator -g 
-#install node-gyp to the global scope as errors occurred when installing mongoose
-#npm install -g node-gyp
-#install mongoose
-#npm install mongoose --save
+npm install express-session --save
 cd ..
+
 #build app structure
 express -f networkKing
 cd networkKing
+
 #install passport
 npm install passport --save
 npm install passport-local --save
+npm install connect-flash --save
+npm install bcrypt-nodejs --save
+
+#install mongodb
+apt-get install mongodb -y 
+
+#install mongoose, requires libkrb5-dev or errors will occur with the kerberos module
+apt-get install libkrb5-dev -y
+npm install mongoose --save
+
+
+#put files in place
+cp -f /vagrant/app.js /home/vagrant/networkking/app.js
+cp /vagrant/db.js /home/vagrant/networkking/db.js
+mkdir /home/vagrant/networkking/models
+cp /vagrant/models/* /home/vagrant/networkking/models/
+mkdir /home/vagrant/networkking/passport
+cp -f /vagrant/passport/* /home/vagrant/networkking/passport/
+cp -f /vagrant/routes/* /home/vagrant/networkking/routes/
+cp -f /vagrant/views/* /home/vagrant/networkking/views/
+
 #prepare the application
 npm install
+
 #run the web server on port 3000 uncomment line below
 #DEBUG=networkKing ./bin/www
 SCRIPT
