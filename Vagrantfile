@@ -26,6 +26,13 @@ npm init
 #install express
 npm install express --save
 npm install express-generator -g 
+#install passport
+npm install passport --save
+npm install passport-local --save
+#install node-gyp to the global scope as errors occurred when installing mongoose
+#npm install -g node-gyp
+#install mongoose
+#npm install mongoose --save
 cd ..
 #build app structure
 express -f networkKing
