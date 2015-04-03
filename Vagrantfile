@@ -21,22 +21,22 @@ curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install nodejs -y
 apt-get install build-essential -y 
 
-#set up networkKing app
+#initialize networkKing app
 mkdir networkKing
 cd networkKing
 npm init
 
-#install express
+#install express, express-generator, and express-session modules
 npm install express --save
 npm install express-generator -g 
 npm install express-session --save
 cd ..
 
-#build app structure
+#build app structure with express module
 express -f networkKing
 cd networkKing
 
-#install passport
+#install passport module
 npm install passport --save
 npm install passport-local --save
 npm install connect-flash --save
@@ -45,7 +45,7 @@ npm install bcrypt-nodejs --save
 #install mongodb
 apt-get install mongodb -y 
 
-#install mongoose, requires libkrb5-dev or errors will occur with the kerberos module
+#install mongoose - requires libkrb5-dev or errors will occur with the kerberos sub-module
 apt-get install libkrb5-dev -y
 npm install mongoose --save
 
