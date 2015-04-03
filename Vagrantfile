@@ -51,14 +51,14 @@ npm install mongoose --save
 
 
 #put files in place
-cp -f /vagrant/app.js /home/vagrant/networkking/app.js
-cp /vagrant/db.js /home/vagrant/networkking/db.js
-mkdir /home/vagrant/networkking/models
-cp /vagrant/models/* /home/vagrant/networkking/models/
-mkdir /home/vagrant/networkking/passport
-cp -f /vagrant/passport/* /home/vagrant/networkking/passport/
-cp -f /vagrant/routes/* /home/vagrant/networkking/routes/
-cp -f /vagrant/views/* /home/vagrant/networkking/views/
+cp -f /vagrant/app.js /home/vagrant/networkKing/app.js
+cp /vagrant/db.js /home/vagrant/networkKing/db.js
+mkdir /home/vagrant/networkKing/models
+cp /vagrant/models/* /home/vagrant/networkKing/models/
+mkdir /home/vagrant/networkKing/passport
+cp -f /vagrant/passport/* /home/vagrant/networkKing/passport/
+cp -f /vagrant/routes/* /home/vagrant/networkKing/routes/
+cp -f /vagrant/views/* /home/vagrant/networkKing/views/
 
 #prepare the application
 npm install
