@@ -49,7 +49,6 @@ apt-get install mongodb -y
 apt-get install libkrb5-dev -y
 npm install mongoose --save
 
-
 #put files in place
 cp -f /vagrant/app.js /home/vagrant/networkKing/app.js
 cp /vagrant/db.js /home/vagrant/networkKing/db.js
@@ -59,8 +58,7 @@ mkdir /home/vagrant/networkKing/passport
 cp -f /vagrant/passport/* /home/vagrant/networkKing/passport/
 cp -f /vagrant/routes/* /home/vagrant/networkKing/routes/
 cp -f /vagrant/views/* /home/vagrant/networkKing/views/
-mkdir /home/vagrant/networkKing/stylesheets
-cp -f /vagrant/stylesheets/* /home/vagrant/networkKing/stylesheets/
+cp -f /vagrant/stylesheets/* /home/vagrant/networkKing/public/stylesheets/
 
 #prepare the application
 npm install
