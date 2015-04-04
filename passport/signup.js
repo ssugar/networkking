@@ -22,7 +22,7 @@ module.exports = function(passport){
                         console.log('User already exists with username: '+username);
                         return done(null, false, req.flash('message','User Already Exists'));
                     } else {
-                        // if there is no user with that email
+                        // if there is no user with that username
                         // create the user
                         var newUser = new User();
 
@@ -30,8 +30,11 @@ module.exports = function(passport){
                         newUser.username = username;
                         newUser.password = createHash(password);
                         newUser.email = req.param('email');
-                        newUser.firstName = req.param('firstName');
-                        newUser.lastName = req.param('lastName');
+                        newUser.firstname = req.param('firstname');
+                        newUser.lastname = req.param('lastname');
+                        newUser.industry = req.param('industry');
+                        newUser.title = req.param('title');
+                        newUser.gender = req.param('gender');
 
                         // save the user
                         newUser.save(function(err) {
