@@ -12,18 +12,17 @@ block content
 							input(type='email', name='email', class='form-control', placeholder='Email', required)
 							input(type='text', name='firstname', class='form-control', placeholder='First Name', required)
 							input(type='text', name='lastname', class='form-control', placeholder='Last Name', required)
-							|Industry: 
-							select(name='industry', placeholder="Industry", required)
-								option(value='') Select One...
+							select(name='industry', placeholder="Industry", class='form-control', required)
+								option(value='') Select Industry...
 								option(value='Service') Service
 								option(value='Manufacturing') Manufacturing
 								option(value='Retail') Retail
 								option(value='Government') Government
 							input(type='text', name='title', class='form-control', placeholder='Title',required)
-							input(type='radio', name='gender', id='optionsGender1', value='Male', class='form-control')
 							|Male
-							input(type='radio', name='gender', id='optionsGender2', value='Female', class='form-control')
+							input(type='radio', name='gender', id='optionsGender1', value='Male', class='form-control')
 							|Female
+							input(type='radio', name='gender', id='optionsGender2', value='Female', class='form-control')
 							button(class='btn btn-lg btn-primary btn-block', type='submit') Register
 							span.clearfix
 					#message
