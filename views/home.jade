@@ -8,12 +8,12 @@ block content
 					h1.text-center.login-title Welcome #{user.firstname}. Check your details below:
 						div.signup-wall
 							ul.user-details
-								li Username ---> #{user.username}
-								li Email    ---> #{user.email}
-								li First Name ---> #{user.firstname} 
-								li Last Name ---> #{user.lastname}
-								li Last Name ---> #{user.industry}
-								li Last Name ---> #{user.title}
-								li Last Name ---> #{user.gender}
+								li Username: #{user.username}
+								li Email: #{user.email}
+								li First Name: #{user.firstname} 
+								li Last Name: #{user.lastname}
+								li Industry: #{user.industry}
+								li Title: #{user.title}
+								li Gender: #{user.gender}
 						a(href='/signout', class='text-center new-account') Sign Out
 

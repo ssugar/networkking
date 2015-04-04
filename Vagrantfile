@@ -59,6 +59,8 @@ mkdir /home/vagrant/networkKing/passport
 cp -f /vagrant/passport/* /home/vagrant/networkKing/passport/
 cp -f /vagrant/routes/* /home/vagrant/networkKing/routes/
 cp -f /vagrant/views/* /home/vagrant/networkKing/views/
+mkdir /home/vagrant/networkKing/stylesheets
+cp -f /vagrant/stylesheets/* /home/vagrant/networkKing/stylesheets/
 
 #prepare the application
 npm install
