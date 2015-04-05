@@ -26,7 +26,9 @@ module.exports = function(passport){
                 }
                 // User and password both match, return user from done method
                 // which will be treated like success
-                return done(null, user);
+				user.latitude = req.param('latitude');
+				user.longitude = req.param('longitude');
+				return done(null, user);
             }
           );
        })
