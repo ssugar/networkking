@@ -60,12 +60,18 @@ cp -f /vagrant/routes/* /home/vagrant/networkKing/routes/
 cp -f /vagrant/views/* /home/vagrant/networkKing/views/
 cp -f /vagrant/stylesheets/* /home/vagrant/networkKing/public/stylesheets/
 cp -f /vagrant/javascripts/* /home/vagrant/networkKing/public/javascripts/
+cp -f /vagrant/bin/* /home/vagrant/networkKing/bin/
 
 #prepare the application
 npm install
 
-#run the web server on port 3000 uncomment line below
-#DEBUG=networkKing ./bin/www
+#install pm2, start app, setup pm2 as service, save processes
+npm install pm2 -g
+pm2 start ./bin/www --name "networkking" -i max
+env PATH=$PATH:/usr/bin pm2 startup ubuntu -u root
+pm2 save
+
+#web server now running on port 80
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
