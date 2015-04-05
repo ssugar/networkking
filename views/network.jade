@@ -14,8 +14,17 @@ block content
 								li Last Name: #{user.lastname}
 								li Industry: #{user.industry}
 								li Title: #{user.title}
+								li Latitude: #{user.latitude}
+								li Longitude: #{user.longitude}
 								li Gender: #{user.gender}
-								each person in users
-									li #{person.firstname}
 						a(href='/signout', class='text-center new-account') Sign Out
+					h1.text-center.login-title Here are the other networkers:
+					each person in users
+						div.signup-wall
+							ul.user-details
+								li #{person.lastname}, #{person.firstname}
+								li #{person.title}
+								li #{person.industry}
+								li #{person.latitude}
+								li #{person.longitude}
 
