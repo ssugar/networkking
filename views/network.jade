@@ -15,6 +15,7 @@ block content
 								li Industry: #{user.industry}
 								li Title: #{user.title}
 								li Gender: #{user.gender}
+								each person in users
+									li #{person.firstname}
 						a(href='/signout', class='text-center new-account') Sign Out
-						a(href='/network', class='text-center new-account') Check Network
 

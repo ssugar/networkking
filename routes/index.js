@@ -1,5 +1,7 @@
-var express = require('express');
+var express = require('express'),
+	Users = require('../models/user');
 var router = express.Router();
+
 
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler 
@@ -42,6 +44,13 @@ module.exports = function(passport){
 	router.get('/home', isAuthenticated, function(req, res){
 		res.render('home', { user: req.user });
 	});
+
+        /* GET Network Page */
+        router.get('/network', isAuthenticated, function(req, res){
+		Users.find(function(err, docs){
+			return res.render('network', { user: req.user, users: docs });
+		});
+        });
 
 	/* Handle Logout */
 	router.get('/signout', function(req, res) {
