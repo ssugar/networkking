@@ -59,6 +59,7 @@ cp -f /vagrant/passport/* /home/vagrant/networkKing/passport/
 cp -f /vagrant/routes/* /home/vagrant/networkKing/routes/
 cp -f /vagrant/views/* /home/vagrant/networkKing/views/
 cp -f /vagrant/stylesheets/* /home/vagrant/networkKing/public/stylesheets/
+cp -f /vagrant/javascripts/* /home/vagrant/networkKing/public/javascripts/
 
 #prepare the application
 npm install
