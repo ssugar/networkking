@@ -16,6 +16,6 @@
 			function(err) {
 				noGeolocation();
 			}
-		};
+		);
 	}
 })();

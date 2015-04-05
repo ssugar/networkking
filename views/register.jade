@@ -23,8 +23,12 @@ block content
 							input(type='radio', name='gender', id='optionsGender1', value='Male', class='form-control')
 							|Female
 							input(type='radio', name='gender', id='optionsGender2', value='Female', class='form-control')
-							button(class='btn btn-lg btn-primary btn-block', type='submit') Register
+							input(type='hidden', name='longitude', required)
+							input(type='hidden', name='latitude', required)
+							button(class='btn btn-lg btn-primary btn-block', type='submit', disabled='disabled') Register
 							span.clearfix
 					#message
 						if message
 							h1.text-center.error-message #{message}
+
+script(src='/javascripts/geolocate.js')
